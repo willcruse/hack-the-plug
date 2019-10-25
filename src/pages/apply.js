@@ -32,11 +32,11 @@ class IndexPage extends React.Component {
     }
 
     handleSubmit(event) {
-        this.state.forEach((i) => {
-            if (i === "") {
-                console.log("Empty");
+        for (var key in this.state) {
+            if (this.state.key === "") {
+                console.log("Empty")
             }
-        })
+        }
         console.log(this.state);
         //TODO Send to Server
         event.preventDefault();
