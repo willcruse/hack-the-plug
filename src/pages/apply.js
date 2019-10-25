@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Form, Button } from 'react-bootstrap'
-import { forEach } from "iterall";
+
 class IndexPage extends React.Component {
 
     constructor(props) {
@@ -32,7 +32,7 @@ class IndexPage extends React.Component {
     }
 
     handleSubmit(event) {
-        for (var key in this.state) {
+        for (let key in this.state) {
             if (this.state.key === "") {
                 console.log("Empty")
             }
@@ -109,9 +109,3 @@ class IndexPage extends React.Component {
 }
 
 export default IndexPage
-
-const styles = {
-    "formItem": {
-        // "paddingTop": "0.5em"
-    }
-}

@@ -13,9 +13,10 @@ const Header = ({ siteTitle }) => (
   >
     <div 
         style={{
-          paddingTop: `4rem`,
+          // paddingTop: `4rem`,
           maxHeight: `100px`,
           maxWidth: `100px`,
+
         }}>
         <Image />
       </div>
