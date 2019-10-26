@@ -14,7 +14,7 @@ const Header = () => (
       <Container>
         <Row>
           <Col>
-      <Image style={{
+      <Image alt="logo" style={{
         maxHeight: `300px`,
         maxWidth: `300px`
       }} />
