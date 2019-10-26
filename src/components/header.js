@@ -11,46 +11,24 @@ const Header = ({ siteTitle }) => (
       marginBottom: `1.45rem`,
     }}
   >
-    <div 
-        style={{
-          // paddingTop: `4rem`,
-          maxHeight: `100px`,
-          maxWidth: `100px`,
-
-        }}>
-        <Image />
-      </div>
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-        
-      </h1>
-      <h2> 
+    <h2> 
       <Link
         to="/apply"
         style={{
           color: `white`,
           float: `right`,
+          paddingTop: `13rem`,
         }}
         >
         Apply
       </Link>
       </h2>
-    </div>
+      <Image style={{
+          // paddingTop: `4rem`,
+          maxHeight: `300px`,
+          maxWidth: `300px`
+        }}/>
+    {/* </div> */}
   </header>
   </div>
 
