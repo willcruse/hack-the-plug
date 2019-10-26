@@ -2,34 +2,49 @@ import { Link } from "gatsby"
 import Image from "../components/image"
 import PropTypes from "prop-types"
 import React from "react"
-
-const Header = ({ siteTitle }) => (
+import { Container, Row, Col } from "react-bootstrap"
+const Header = () => (
   <div>
-  <header
-    style={{
-      background: `#008dd5`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <h2> 
-      <Link
-        to="/apply"
-        style={{
-          color: `white`,
-          float: `right`,
-          paddingTop: `13rem`,
-        }}
-        >
-        Apply
+    <header
+      style={{
+        background: `#008dd5`,
+        marginBottom: `1.45rem`,
+      }}
+    >
+      <Container>
+        <Row>
+          <Col>
+      <Image style={{
+        maxHeight: `300px`,
+        maxWidth: `300px`
+      }} />
+      </Col>
+      <Col>
+      <h2>
+        <Link
+          to="/"
+          style={{
+            color: `white`,
+          }}>
+          Home
       </Link>
       </h2>
-      <Image style={{
-          // paddingTop: `4rem`,
-          maxHeight: `300px`,
-          maxWidth: `300px`
-        }}/>
-    {/* </div> */}
-  </header>
+      </Col>
+      <Col>
+      <h2>
+        <Link
+          to="/apply"
+          style={{
+            color: `white`,
+          }}
+        >
+          Apply
+      </Link>
+      </h2>
+      </Col>
+      </Row>
+      </Container>
+    </header>
   </div>
 
 )
