@@ -19,18 +19,20 @@ const Header = () => (
         maxWidth: `300px`
       }} />
       </Col>
-      <Col>
+      <Col></Col>
+      <Col style={{alignSelf: `flex-end`}}>
       <h2>
         <Link
           to="/"
           style={{
             color: `white`,
+            float: `bottom`,
           }}>
           Home
       </Link>
       </h2>
       </Col>
-      <Col>
+      <Col style={{alignSelf: `flex-end`}}>
       <h2>
         <Link
           to="/apply"
