@@ -18,7 +18,8 @@ class IndexPage extends React.Component {
             "question3": "",
             "gender": "",
             "race": "",
-            "tshirt": ""
+            "tshirt": "",
+            "github": "",
         };
 
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -27,18 +28,25 @@ class IndexPage extends React.Component {
 
     handleUpdate(event) {
         let tag = event.target.name;
-        console.log(tag);
         this.setState({ [tag]: event.target.value });
     }
 
     handleSubmit(event) {
-        for (let key in this.state) {
-            if (this.state.key === "") {
-                console.log("Empty")
+        fetch("https://europe-west2-hack-the-plug.cloudfunctions.net/receiveApplicant", {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Origin': 'https://hacktheplug.tech'
             }
-        }
-        console.log(this.state);
-        //TODO Send to Server
+        }).then((response) => {
+            console.log(response);
+
+        }).catch((error) => {
+            console.log(error);
+        });
+
         event.preventDefault();
     }
 
@@ -73,6 +81,10 @@ class IndexPage extends React.Component {
                         <Form.Label>What do you hack for?</Form.Label>
                         <Form.Control as="textarea" name="question3" onChange={this.handleUpdate}></Form.Control>
                     </Form.Group>
+                    <Form.Group controlId="github">
+                        <Form.Label>Github Link</Form.Label>
+                        <Form.Control type="text" name="github" placeholder="github.com/torvalds" onChange={this.handleUpdate}></Form.Control>
+                    </Form.Group>
                     <h3>Demographics</h3>
                     <Form.Group controlId="gender">
                         <Form.Label>What gender are you?</Form.Label>
@@ -80,12 +92,12 @@ class IndexPage extends React.Component {
                             <option>Please select</option>
                             <option>M</option>
                             <option>F</option>
-                            <option>Prefer not to say</option>                    
+                            <option>Prefer not to say</option>
                         </Form.Control>
                     </Form.Group>
                     <Form.Group controlId="race">
                         <Form.Label>What race/ethnicity are you?</Form.Label>
-                        <Form.Control type="text" name="race" onChange={this.handleUpdate}/>
+                        <Form.Control type="text" name="race" onChange={this.handleUpdate} />
                     </Form.Group>
                     <h3>Swag</h3>
                     <Form.Group controlId="tshirtSelect">
@@ -99,6 +111,13 @@ class IndexPage extends React.Component {
                             <option>XL</option>
                         </Form.Control>
                     </Form.Group>
+                    {/* <h3>CV/Resume</h3>
+                    <Form.Group controlId="cvUpload">
+                        
+                    </Form.Group>
+                    <Form.Group controlId="cvShare">
+                        <Form.Check type="checkbox" label="Tick to confirm you are happy to share your CV: " />
+                    </Form.Group> */}
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
