@@ -2,9 +2,9 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Alert } from 'react-bootstrap'
 
-class IndexPage extends React.Component {
+class ApplyPage extends React.Component {
 
     constructor(props) {
         super(props);
@@ -20,6 +20,8 @@ class IndexPage extends React.Component {
             "race": "",
             "tshirt": "",
             "github": "",
+            "success": "none",
+            "fail": "none",
         };
 
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -32,22 +34,38 @@ class IndexPage extends React.Component {
     }
 
     handleSubmit(event) {
+        event.preventDefault();
+        let toSend = {};
+        let keys = Object.keys(this.state);
+        for (var keyIndex in keys) {
+            var val = keys[keyIndex];
+            if (val != "fail" && val != "success") {
+                console.log(this.state[val]);
+                toSend[val] = this.state[val];
+            }
+        }
+        console.log(toSend);
         fetch("https://europe-west2-hack-the-plug.cloudfunctions.net/receiveApplicant", {
             method: 'POST',
-            body: JSON.stringify(this.state),
+            body: JSON.stringify(toSend),
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
                 'Origin': 'https://hacktheplug.tech'
             }
         }).then((response) => {
-            console.log(response);
-
+            if (response.status === 200) {
+                this.setState({["success"]: "inline"});
+                this.setState({["fail"]: "none"});
+            } else {
+            this.setState({["fail"]: "inline"});
+            this.setState({["success"]: "none"});
+            }
+            
         }).catch((error) => {
             console.log(error);
+            this.setState({["fail"]: "inline"});
         });
-
-        event.preventDefault();
     }
 
     render() {
@@ -122,9 +140,16 @@ class IndexPage extends React.Component {
                         Submit
                     </Button>
                 </Form>
+                <Alert key={"successAlert"} variant='success' style={{"display": this.state.success}}>
+                    Submitted sucessfully
+                </Alert>
+                <Alert key={"failAlert"} variant='danger' style={{"display": this.state.fail}}>
+                    Application Failed
+                </Alert>
+                <div style={{"paddingBottom": "5em"}}></div>
             </Layout>
         )
     }
 }
 
-export default IndexPage
+export default ApplyPage

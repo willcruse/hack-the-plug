@@ -28,7 +28,6 @@ def writeToDatabase(request):
     headers = {
         'Access-Control-Allow-Origin': '*',
     }
-    print(request_json)
     try:
         if 'email' not in list(request_json.keys()):
             return('no-email', 400, headers)
@@ -38,10 +37,14 @@ def writeToDatabase(request):
         for key in list(request_json.keys()):
             ins[key] = str(request_json.get(key, ""))
 
-        print("Ins: {}".format(ins))
         db = firestore.Client()
-        db.collection(collection_path).document(
-            request_json.get('email')).set(ins)
+        doc = db.collection(collection_path).document(
+            request_json.get("email")).get()
+        if doc.exists:
+            return('already-applied', 400, headers)
+        else:
+            db.collection(collection_path).document(
+                request_json.get('email')).set(ins)
     except Exception as e:
         return(str(e), 500, headers)
     return('success', 200, headers)
