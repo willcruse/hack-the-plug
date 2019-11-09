@@ -20,6 +20,8 @@ class ApplyPage extends React.Component {
             "race": "",
             "tshirt": "",
             "github": "",
+            "cv": "",
+            "cvBox": false,
             "success": "none",
             "fail": "none",
         };
@@ -30,7 +32,11 @@ class ApplyPage extends React.Component {
 
     handleUpdate(event) {
         let tag = event.target.name;
-        this.setState({ [tag]: event.target.value });
+        if (tag === "cvBox") {
+            this.setState({ [tag]: !this.state.tag });
+        } else {
+            this.setState({ [tag]: event.target.value });
+        }
     }
 
     handleSubmit(event) {
@@ -39,12 +45,11 @@ class ApplyPage extends React.Component {
         let keys = Object.keys(this.state);
         for (var keyIndex in keys) {
             var val = keys[keyIndex];
-            if (val != "fail" && val != "success") {
+            if (val !== "fail" && val !== "success") {
                 console.log(this.state[val]);
                 toSend[val] = this.state[val];
             }
         }
-        console.log(toSend);
         fetch("https://europe-west2-hack-the-plug.cloudfunctions.net/receiveApplicant", {
             method: 'POST',
             body: JSON.stringify(toSend),
@@ -55,16 +60,16 @@ class ApplyPage extends React.Component {
             }
         }).then((response) => {
             if (response.status === 200) {
-                this.setState({["success"]: "inline"});
-                this.setState({["fail"]: "none"});
+                this.setState({ ["success"]: "inline" });
+                this.setState({ ["fail"]: "none" });
             } else {
-            this.setState({["fail"]: "inline"});
-            this.setState({["success"]: "none"});
+                this.setState({ ["fail"]: "inline" });
+                this.setState({ ["success"]: "none" });
             }
-            
+
         }).catch((error) => {
             console.log(error);
-            this.setState({["fail"]: "inline"});
+            this.setState({ ["fail"]: "inline" });
         });
     }
 
@@ -77,15 +82,15 @@ class ApplyPage extends React.Component {
                     <h3>About You</h3>
                     <Form.Group controlId="name">
                         <Form.Label>What is your name?</Form.Label>
-                        <Form.Control type="text" placeholder="Bart Simpson" name="name" onChange={this.handleUpdate} />
+                        <Form.Control type="text" placeholder="Bart Simpson" name="name" onChange={this.handleUpdate} required/>
                     </Form.Group>
                     <Form.Group controlId="email" >
                         <Form.Label>What is your email address?</Form.Label>
-                        <Form.Control type="email" placeholder="eat@myshorts.com" name="email" onChange={this.handleUpdate} />
+                        <Form.Control type="email" placeholder="eat@myshorts.com" name="email" onChange={this.handleUpdate} required/>
                     </Form.Group>
                     <Form.Group controlId="school">
                         <Form.Label>What school do you attend?</Form.Label>
-                        <Form.Control type="text" placeholder="Springfield Elementary" name="school" onChange={this.handleUpdate} />
+                        <Form.Control type="text" placeholder="Springfield Elementary" name="school" onChange={this.handleUpdate} required/>
                     </Form.Group>
                     <Form.Group controlId="question1" >
                         <Form.Label>Why do you want to attend Hack The Plug?</Form.Label>
@@ -106,7 +111,7 @@ class ApplyPage extends React.Component {
                     <h3>Demographics</h3>
                     <Form.Group controlId="gender">
                         <Form.Label>What gender are you?</Form.Label>
-                        <Form.Control as="select" name="gender" onChange={this.handleUpdate}>
+                        <Form.Control as="select" name="gender" onChange={this.handleUpdate} required>
                             <option>Please select</option>
                             <option>M</option>
                             <option>F</option>
@@ -115,12 +120,12 @@ class ApplyPage extends React.Component {
                     </Form.Group>
                     <Form.Group controlId="race">
                         <Form.Label>What race/ethnicity are you?</Form.Label>
-                        <Form.Control type="text" name="race" onChange={this.handleUpdate} />
+                        <Form.Control type="text" name="race" onChange={this.handleUpdate} required />
                     </Form.Group>
                     <h3>Swag</h3>
                     <Form.Group controlId="tshirtSelect">
                         <Form.Label>What T-Shirt size do you wear?</Form.Label>
-                        <Form.Control as="select" name="tshirt" onChange={this.handleUpdate}>
+                        <Form.Control as="select" name="tshirt" onChange={this.handleUpdate} required>
                             <option>Please Select</option>
                             <option>XS</option>
                             <option>S</option>
@@ -129,24 +134,25 @@ class ApplyPage extends React.Component {
                             <option>XL</option>
                         </Form.Control>
                     </Form.Group>
-                    {/* <h3>CV/Resume</h3>
+                    <h3>CV/Resume</h3>
                     <Form.Group controlId="cvUpload">
-                        
+                        <Form.Label>CV/Resume Link</Form.Label>
+                        <Form.Control type="text" name="cv" onChange={this.handleUpdate}></Form.Control>
                     </Form.Group>
                     <Form.Group controlId="cvShare">
-                        <Form.Check type="checkbox" label="Tick to confirm you are happy to share your CV: " />
-                    </Form.Group> */}
+                        <Form.Check name="cvBox" type="checkbox" label="Tick to confirm you are happy for us to share your CV with recruiters" onChange={this.handleUpdate} />
+                    </Form.Group>
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
                 </Form>
-                <Alert key={"successAlert"} variant='success' style={{"display": this.state.success}}>
+                <Alert key={"successAlert"} variant='success' style={{ "display": this.state.success }}>
                     Submitted sucessfully
                 </Alert>
-                <Alert key={"failAlert"} variant='danger' style={{"display": this.state.fail}}>
+                <Alert key={"failAlert"} variant='danger' style={{ "display": this.state.fail }}>
                     Application Failed
                 </Alert>
-                <div style={{"paddingBottom": "5em"}}></div>
+                <div style={{ "paddingBottom": "5em" }}></div>
             </Layout>
         )
     }
