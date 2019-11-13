@@ -78,6 +78,7 @@ class ApplyPage extends React.Component {
             <Layout>
                 <SEO title="Apply" />
                 <h1>Apply for Hack The Plug</h1>
+                <h1 style={{color: 'red'}}>WEBSITE UNDER CONTRUCTION, SUBMITTED APPLICATIONS WILL NOT BE READ OR CONSIDERED</h1>
                 <Form onSubmit={this.handleSubmit}>
                     <h3>About You</h3>
                     <Form.Group controlId="name">
