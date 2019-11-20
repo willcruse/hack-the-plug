@@ -32,7 +32,7 @@ const Header = () => (
       </Link>
       </h2>
       </Col>
-      <Col style={{alignSelf: `flex-end`}}>
+      {/* <Col style={{alignSelf: `flex-end`}}>
       <h2>
         <Link
           to="/apply"
@@ -43,7 +43,7 @@ const Header = () => (
           Apply
       </Link>
       </h2>
-      </Col>
+      </Col> */}
       </Row>
       </Container>
     </header>
