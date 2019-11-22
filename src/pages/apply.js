@@ -60,16 +60,16 @@ class ApplyPage extends React.Component {
             }
         }).then((response) => {
             if (response.status === 200) {
-                this.setState({ ["success"]: "inline" });
-                this.setState({ ["fail"]: "none" });
+                this.setState({ "success": "inline" });
+                this.setState({ "fail": "none" });
             } else {
-                this.setState({ ["fail"]: "inline" });
-                this.setState({ ["success"]: "none" });
+                this.setState({ "fail": "inline" });
+                this.setState({ "success": "none" });
             }
 
         }).catch((error) => {
             console.log(error);
-            this.setState({ ["fail"]: "inline" });
+            this.setState({ "fail": "inline" });
         });
     }
 

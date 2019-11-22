@@ -11,28 +11,30 @@ const Header = () => (
         marginBottom: `1.45rem`,
       }}
     >
-      <Container>
+      <Container fluid>
         <Row>
-          <Col>
-      <Image alt="logo" style={{
-        maxHeight: `300px`,
-        maxWidth: `300px`
-      }} />
-      </Col>
-      <Col></Col>
-      <Col style={{alignSelf: `flex-end`}}>
-      <h2>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            float: `bottom`,
-          }}>
-          Home
+          <Col style={{
+              maxHeight: `300px`,
+              maxWidth: `300px`
+            }}>
+            <Image alt="logo" />
+          </Col>
+          <Col></Col>
+          <Col style={{ alignSelf: `flex-end` }}>
+            <h2>
+              <Link
+                to="/"
+                style={{
+                  color: `white`,
+                  float: `bottom`,
+                }}
+                >
+                Home
       </Link>
-      </h2>
-      </Col>
-      {/* <Col style={{alignSelf: `flex-end`}}>
+            </h2>
+          </Col>
+          {/* The Link to the application page */}
+          {/* <Col style={{alignSelf: `flex-end`}}>
       <h2>
         <Link
           to="/apply"
@@ -44,7 +46,7 @@ const Header = () => (
       </Link>
       </h2>
       </Col> */}
-      </Row>
+        </Row>
       </Container>
     </header>
   </div>
@@ -56,7 +58,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: `Hello World`,
+  siteTitle: `Hack The Plug`,
 }
 
 export default Header
