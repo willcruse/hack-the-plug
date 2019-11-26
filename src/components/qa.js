@@ -2,7 +2,7 @@ import React from "react"
 
 const QA = (props) => {
     return (<div>
-        <h3>{props.question}</h3>
+        <h4>{props.question}</h4>
         <p>{props.ans}</p>
     </div>)
 }

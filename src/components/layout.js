@@ -35,9 +35,7 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built by
-          {` `}
-          <a style={{color: `black`}} href="https://www.github.com/willcruse">Will Cruse</a>
+          <a style={{color: `black`}} href="mailto:hacktheplug@gmail.com">Email Us</a>
         </footer>
       </div>
     </>

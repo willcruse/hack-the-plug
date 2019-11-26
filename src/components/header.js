@@ -14,9 +14,9 @@ const Header = () => (
       <Container fluid>
         <Row>
           <Col style={{
-              maxHeight: `300px`,
-              maxWidth: `300px`
-            }}>
+            maxHeight: `300px`,
+            maxWidth: `300px`
+          }}>
             <Image alt="logo" />
           </Col>
           <Col></Col>
@@ -28,13 +28,23 @@ const Header = () => (
                   color: `white`,
                   float: `bottom`,
                 }}
-                >
+              >
                 Home
       </Link>
             </h2>
           </Col>
-          {/* The Link to the application page */}
-          {/* <Col style={{alignSelf: `flex-end`}}>
+          <Col style={{ alignSelf: `flex-end` }}>
+            <h2>
+              <Link
+                to="/committee"
+                style={{
+                  color: `white`,
+                  float: `bottom`,
+                }}>Committee</Link>
+                </h2>
+          </Col>
+            {/* The Link to the application page */}
+            {/* <Col style={{alignSelf: `flex-end`}}>
       <h2>
         <Link
           to="/apply"
@@ -51,14 +61,14 @@ const Header = () => (
     </header>
   </div>
 
-)
-
+    )
+    
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
+      siteTitle: PropTypes.string,
+  }
+  
 Header.defaultProps = {
-  siteTitle: `Hack The Plug`,
-}
-
-export default Header
+      siteTitle: `Hack The Plug`,
+  }
+  
+  export default Header

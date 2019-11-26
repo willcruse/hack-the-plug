@@ -22,7 +22,7 @@ const IndexPage = () => (
     </div>
     <div id="Sponsor">
       <h1>Interested in sponsoring Hack The Plug?</h1>
-      <p>Please email <b>wpjc20@bath.ac.uk</b> to discuss sponsorship</p>
+      <p>Please email <b>hacktheplug@gmail.com</b> to discuss sponsorship</p>
     </div>
   </Layout>
 )
