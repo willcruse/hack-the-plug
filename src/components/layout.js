@@ -34,9 +34,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          <a style={{color: `black`}} href="mailto:hacktheplug@gmail.com">Email Us</a>
-        </footer>
+
       </div>
     </>
   )

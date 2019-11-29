@@ -33,7 +33,7 @@ const Header = () => (
       </Link>
             </h2>
           </Col>
-          <Col style={{ alignSelf: `flex-end` }}>
+          {/* <Col style={{ alignSelf: `flex-end` }}>
             <h2>
               <Link
                 to="/committee"
@@ -42,7 +42,7 @@ const Header = () => (
                   float: `bottom`,
                 }}>Committee</Link>
                 </h2>
-          </Col>
+          </Col> */}
             {/* The Link to the application page */}
             {/* <Col style={{alignSelf: `flex-end`}}>
       <h2>
