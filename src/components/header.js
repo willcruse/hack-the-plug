@@ -12,12 +12,13 @@ import {
 const Header = () => ( <div>
   <header style = {
     {
-      background: `#008dd5`,
+      background: `rgba(0, 0, 0, 0.10)`,
+      maxHeight: 50
       // marginBottom: `1.45rem`
     }
   }>
   <Container fluid>
-    <Row style = {{maxWidth: '50%', marginLeft: '10%'}}>
+    <Row style = {{maxWidth: '50%', marginLeft: '5%'}}>
       {/*<Col style = {
         {
           maxHeight: `300px`,
@@ -37,8 +38,7 @@ const Header = () => ( <div>
         <Link
           to = "/"
           style = {{
-            color: `white`,
-            float: `bottom`,
+            color: `black`,
             fontSize: 14
           }}>About</Link>
         </h2>
@@ -51,7 +51,7 @@ const Header = () => ( <div>
         <Link
           to="/committee"
           style={{
-            color: `white`,
+            color: `black`,
             float: `bottom`,
             fontSize: 14
           }}>The team</Link>
@@ -65,7 +65,7 @@ const Header = () => ( <div>
         <Link
           to="/apply"
           style={{
-            color: `white`,
+            color: `black`,
             float: `bottom`,
             fontSize: 14
           }}>FAQs</Link>
@@ -79,7 +79,7 @@ const Header = () => ( <div>
         <Link
           to="/apply"
           style={{
-            color: `white`,
+            color: `black`,
             float: `bottom`,
             fontSize: 14
           }}>Sponsors</Link>

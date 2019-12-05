@@ -37,7 +37,9 @@ const BackgroundSection = ({ className }) => (
 // export default BackgroundSection;
 const StyledBackgroundSection = styled(BackgroundSection)`
   width: 100%;
-  height: 500px;
+  height: 100vh;
+  margin-top: -50px;
+  z-index: -1;
   background-position: bottom;
   background-repeat: repeat-y;
   background-size: cover;`
