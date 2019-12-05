@@ -55,7 +55,7 @@ const Header = () => (
           Apply
       </Link>
       </h2>
-      </Col>
+        </Col>*/}
         </Row>
       </Container>
     </header>
