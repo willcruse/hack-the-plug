@@ -8,7 +8,7 @@ const Header = () => (
     <header
       style={{
         background: `#008dd5`,
-        marginBottom: `1.45rem`,
+        // marginBottom: `1.45rem`
       }}
     >
       <Container fluid>
@@ -55,20 +55,20 @@ const Header = () => (
           Apply
       </Link>
       </h2>
-      </Col> */}
+      </Col>
         </Row>
       </Container>
     </header>
   </div>
 
     )
-    
+
 Header.propTypes = {
       siteTitle: PropTypes.string,
   }
-  
+
 Header.defaultProps = {
       siteTitle: `Hack The Plug`,
   }
-  
+
   export default Header
