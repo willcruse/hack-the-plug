@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
+import Image from './image'
 import BackgroundImage from 'gatsby-background-image'
 
 const BackgroundSection = ({ className }) => (
@@ -8,7 +9,7 @@ const BackgroundSection = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "bg2.jpg" }) {
+        desktop: file(relativePath: { eq: "bg3.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
@@ -28,7 +29,13 @@ const BackgroundSection = ({ className }) => (
           fluid={imageData}
           backgroundColor={`#040e18`}
         >
-
+          <Image style ={{
+            top: '10px',
+            left: '7%',
+            maxWidth: '30%',
+            minWidth: '280px',
+            maxHeight: 'auto'
+          }}></Image>
         </BackgroundImage>
       )
     }}
