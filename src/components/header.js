@@ -92,14 +92,54 @@ const Header = () => ( <div>
   </header>
   </div>
 
-)
+    )
+  }
+  return (
+    <div>
+    <header
+      style={{
+        background: `#008dd5`,
+        // marginBottom: `1.45rem`
+      }}
+    >
+      <Container fluid>
+        <Row>
+          <Col style={{
+            maxHeight: `300px`,
+            maxWidth: `300px`
+          }}>
+            <Image alt="logo" />
+          </Col>
+          <Col style={{ alignSelf: `flex-end` }}>
+            <h2>
+              <Link
+                to="/"
+                style={{
+                  color: `white`,
+                  float: `bottom`,
+                }}
+              >
+                Home
+      </Link>
+      </h2>
+      </Col>
+      </Row>
+      </Container>
+    </header>
+  </div>
+
+    )
+
+      }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+      siteTitle: PropTypes.string,
+      main: PropTypes.bool,
+  }
 
 Header.defaultProps = {
-  siteTitle: `Hack The Plug`,
-}
+      siteTitle: `Hack The Plug`,
+      main: true,
+  }
 
 export default Header
