@@ -45,6 +45,17 @@ const Header = (main) => {
       </h2>
       </Col>
 
+            {/* The Link to the About section */}
+            <Col style={{ alignSelf: `flex-end`, textAlign: 'center' }}>
+              <h2>
+                <Link
+                  to="/"
+                  style={{
+                    color: `black`,
+                    fontSize: 14
+                  }}>About</Link>
+              </h2>
+            </Col>
 
       {
         /* The Link to the committee section */ } <
@@ -66,6 +77,18 @@ const Header = (main) => {
       </h2>
       </Col>
 
+            {/* The Link to the committee section */}
+            <Col style={{ alignSelf: `flex-end`, textAlign: 'center' }}>
+              <h2>
+                <Link
+                  to="/committee"
+                  style={{
+                    color: `black`,
+                    float: `bottom`,
+                    fontSize: 14
+                  }}>The team</Link>
+              </h2>
+            </Col>
 
       {
         /* The Link to the application section */ } <
@@ -87,6 +110,18 @@ const Header = (main) => {
       </h2>
       </Col>
 
+            {/* The Link to the application section */}
+            <Col style={{ alignSelf: `flex-end`, textAlign: 'center' }}>
+              <h2>
+                <Link
+                  to="/apply"
+                  style={{
+                    color: `black`,
+                    float: `bottom`,
+                    fontSize: 14
+                  }}>FAQs</Link>
+              </h2>
+            </Col>
 
       {
         /* The Link to the sponsors section */ } <
@@ -108,6 +143,18 @@ const Header = (main) => {
       </h2>
       </Col>
 
+            {/* The Link to the sponsors section */}
+            <Col style={{ alignSelf: `flex-end`, textAlign: 'center' }}>
+              <h2>
+                <Link
+                  to="/apply"
+                  style={{
+                    color: `black`,
+                    float: `bottom`,
+                    fontSize: 14
+                  }}>Sponsors</Link>
+              </h2>
+            </Col>
 
       </Row>
       </Container>
@@ -162,12 +209,10 @@ const Header = (main) => {
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
   main: PropTypes.bool,
 }
 
 Header.defaultProps = {
-  siteTitle: `Hack The Plug`,
   main: true,
 }
 
