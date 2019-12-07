@@ -106,6 +106,7 @@ const Header = (main) => {
 
 Header.propTypes = {
       siteTitle: PropTypes.string,
+      main: PropTypes.bool,
   }
 
 Header.defaultProps = {
