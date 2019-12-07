@@ -25,7 +25,7 @@ const Layout = ({ children, main}) => {
 
   return (
     <>
-      <Header siteTitle="HackThePlug" />
+      <Header siteTitle="HackThePlug" main={main}/>
       {main ? <StyledBackgroundSection className="hello" /> : <></> }
       <div
         style={{

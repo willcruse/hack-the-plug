@@ -9,7 +9,7 @@ class PreReg extends React.Component {
 
         this.state = {
             "email": "",
-        }
+        };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
