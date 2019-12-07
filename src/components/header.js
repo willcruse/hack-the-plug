@@ -10,7 +10,8 @@ import {
   Col
 } from "react-bootstrap"
 const Header = (main) => {
-  if (main===true){ return(<div>
+  console.log(main);
+    if (main.main==true){ return(<div>
   <header style = {
     {
       background: `rgba(0, 0, 0, 0.10)`,
@@ -104,13 +105,13 @@ return (
         // marginBottom: `1.45rem`
       }
     }>
+    <h1>Wrong</h1>
       <Container fluid>
         <Row>
           <Col style={{
             maxHeight: `300px`,
             maxWidth: `300px`
           }}>
-            <Image alt="logo" />
           </Col>
           <Col style={{ alignSelf: `flex-end` }}>
             <h2>
