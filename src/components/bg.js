@@ -3,6 +3,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import Image from './image'
 import BackgroundImage from 'gatsby-background-image'
+import { Form, Button } from "react-bootstrap";
 
 const BackgroundSection = ({ className }) => (
 
@@ -36,6 +37,16 @@ const BackgroundSection = ({ className }) => (
             minWidth: '280px',
             maxHeight: 'auto'
           }}></Image>
+
+          <Button variant="primary" type="submit" size="lg" style={{
+            display: 'block',
+            marginRight: 'auto',
+            marginLeft: 'auto',
+            maxWidth: '200px'
+          }}>
+              Pre-Register
+          </Button>
+
         </BackgroundImage>
       )
     }}
