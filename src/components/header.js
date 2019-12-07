@@ -9,7 +9,8 @@ import {
   Row,
   Col
 } from "react-bootstrap"
-const Header = () => ( <div>
+const Header = (main) => {
+  if (main===true){ return(<div>
   <header style = {
     {
       background: `rgba(0, 0, 0, 0.10)`,
