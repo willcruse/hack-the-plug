@@ -27,8 +27,10 @@ const Layout = ({ children, main}) => {
   // `)
 
   return (
-    <>
-      <Header siteTitle="HackThePlug" main={main}/>
+    <div>
+      <Header siteTitle="HackThePlug" main={main} style={{
+        maxWidth: '100%'
+      }}/>
       {main ? <StyledBackgroundSection className="hello" /> : <></> }
       <div
         style={{
@@ -40,7 +42,8 @@ const Layout = ({ children, main}) => {
       >
         <main>{children}</main>
 
-    </div> </>
+    </div> 
+    </div>
   )
 }
 
@@ -49,4 +52,4 @@ Layout.propTypes = {
   main: PropTypes.node.isRequired
 }
 
-export default Layout
+export default Layout;
