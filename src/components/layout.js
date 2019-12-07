@@ -12,23 +12,21 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import StyledBackgroundSection from "./test_component"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Layout = ({ children, main}) => {
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-
-      <StyledBackgroundSection className="hello" />
-
+      <Header siteTitle="HackThePlug" />
+      {main ? <StyledBackgroundSection className="hello" /> : <></> }
       <div
         style={{
           margin: `0 auto`,
@@ -46,6 +44,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  main: PropTypes.node.isRequired
 }
 
 export default Layout
