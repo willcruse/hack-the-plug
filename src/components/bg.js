@@ -42,7 +42,8 @@ const BackgroundSection = ({ className }) => (
             display: 'block',
             marginRight: 'auto',
             marginLeft: 'auto',
-            maxWidth: '200px'
+            minWidth: '20%',
+            minHeight: '50px'
           }}>
               Pre-Register
           </Button>
