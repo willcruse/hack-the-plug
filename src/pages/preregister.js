@@ -17,7 +17,32 @@ class PreReg extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        //TODO Send to Backend
+        var toSend = {
+            "email": this.state.email
+        }
+        fetch("https://europe-west1-hack-the-plug.cloudfunctions.net/preregister", {
+            method: 'POST',
+            body: JSON.stringify(toSend),
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Origin': 'https://hacktheplug.tech'
+            }
+        }).then((response) => {
+            if (response.status === 200) {
+                // this.setState({ "success": "inline" });
+                // this.setState({ "fail": "none" });
+                console.log("s");
+            } else {
+                // this.setState({ "fail": "inline" });
+                // this.setState({ "success": "none" });
+                console.log("f");
+            }
+
+        }).catch((error) => {
+            console.log(error);
+            this.setState({ "fail": "inline" });
+        });
         console.log(this.state.email);
     }
 
