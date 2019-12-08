@@ -9,8 +9,10 @@ class Sponsors extends React.Component {
     render() {
     return (
             <div id="sponsors">
-                
+                <p>Sponsors will be announced soon!</p>
             </div>
         );
 }
 }
+
+export default Sponsors;
