@@ -38,7 +38,7 @@ const BackgroundSection = ({ className }) => (
             maxHeight: 'auto'
           }}></Image>
 
-          <Button variant="primary" type="submit" size="lg" style={{
+          {/*<Button variant="primary" type="submit" size="lg" style={{
             display: 'block',
             marginRight: 'auto',
             marginLeft: 'auto',
@@ -46,7 +46,7 @@ const BackgroundSection = ({ className }) => (
             minHeight: '50px'
           }}>
               Pre-Register
-          </Button>
+          </Button>*/}
 
         </BackgroundImage>
       )
