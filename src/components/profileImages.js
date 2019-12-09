@@ -13,20 +13,78 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-export const WillImage = (props) => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+
+const ProfileImages = (props) => {
+
+      var data = useStaticQuery(graphql`
+      query {
+        willImage: file(relativePath: { eq: "willPic.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        jamesImage: file(relativePath: { eq: "jamesPic.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        oliverImage: file(relativePath: { eq: "oliverPic.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        awenImage: file(relativePath: { eq: "awenPic.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        edImage: file(relativePath: { eq: "edPic.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        arthurImage: file(relativePath: { eq: "arthurPic.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }
-    }
-  `)
+    `);
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+    switch (props.pers) {
+      case "will":
+        return (<Img fluid={data.willImage.childImageSharp.fluid} />);
+        break;
+      case "james":
+        return (<Img fluid={data.jamesImage.childImageSharp.fluid} />);
+        break;
+      case "ollie":
+        return (<Img fluid={data.oliverImage.childImageSharp.fluid} />);
+        break;
+      case "awen":
+        return (<Img fluid={data.awenImage.childImageSharp.fluid} />);
+        break;
+      case "ed":
+        return (<Img fluid={data.edImage.childImageSharp.fluid} />);
+        break;
+      case "arthur":
+        return (<Img fluid={data.arthurImage.childImageSharp.fluid} />);
+        break;
+      default:
+        return (<h1>Error</h1>);
+        break;
+ }
 }
-
-
+export default ProfileImages;
