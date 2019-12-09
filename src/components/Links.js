@@ -37,7 +37,7 @@ const Links = () => {
                     }
                 } >
                     <h2>
-                        <Link to="/committee"
+                        <Link to="/"
                             style={
                                 {
                                     color: `black`,
@@ -57,7 +57,7 @@ const Links = () => {
                     }
                 } >
                     <h2 >
-                        <Link to="/apply"
+                        <Link to="/"
                             style={
                                 {
                                     color: `black`,
@@ -77,7 +77,7 @@ const Links = () => {
                     }
                 } >
                     <h2 >
-                        <Link to="/apply"
+                        <Link to="/"
                             style={
                                 {
                                     color: `black`,
