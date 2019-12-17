@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
-import {
-    Link
-} from "gatsby"
+import { ThemeConsumer } from "styled-components";
+
 
 class Links extends React.Component {
     constructor(props) {
@@ -13,7 +12,7 @@ class Links extends React.Component {
 
     handleClick(event) {
         event.preventDefault();
-
+        window.scrollTo(0, );
     }
 
     render() {
@@ -29,100 +28,68 @@ class Links extends React.Component {
                                     textAlign: 'center'
                                 }
                             } >
-                                <h2 >
-                                    <Link to="/"
-                                        style={
-                                            {
-                                                color: `black`,
-                                                fontSize: 14
-                                            }
-                                        } > About
-          </Link>
-                                </h2>
+                                <p to="/about" onClick={(event) => {
+                                    console.log(this.refs);
+                                    this.refs.about.current.scrollIntoView();
+                                }}
+                                    style={
+                                        {
+                                            color: `black`,
+                                            float: `bottom`,
+                                            fontSize: 14
+                                        }
+                                    }>About</p>
                             </Col>
 
-                { /* The Link to the committee section */}
-                <Col style={
-                    {
-                        alignSelf: `flex-end`,
-                        textAlign: 'center'
-                    }
-                } >
-                    <h2>
-                        <Link to="/"
-                            style={
+                            { /* The Link to the committee section */}
+                            <Col style={
                                 {
                                     alignSelf: `flex-end`,
                                     textAlign: 'center'
                                 }
                             } >
-                                <h2>
-                                    <p to="/committee" onClick={this.handleClick}
-                                        style={
-                                            {
-                                                color: `black`,
-                                                float: `bottom`,
-                                                fontSize: 14
-                                            }
-                                        } > Team
-          </p>
-                                </h2>
+                                <p to="/committee" onClick={this.handleClick}
+                                    style={
+                                        {
+                                            color: `black`,
+                                            float: `bottom`,
+                                            fontSize: 14
+                                        }
+                                    }>Team</p>
                             </Col>
 
-                { /* The Link to the application section */}
-                <Col style={
-                    {
-                        alignSelf: `flex-end`,
-                        textAlign: 'center'
-                    }
-                } >
-                    <h2 >
-                        <Link to="/"
-                            style={
+                            { /* The Link to the application section */}
+                            <Col style={
                                 {
                                     alignSelf: `flex-end`,
                                     textAlign: 'center'
                                 }
                             } >
-                                <h2 >
-                                    <Link to="/apply"
-                                        style={
-                                            {
-                                                color: `black`,
-                                                float: `bottom`,
-                                                fontSize: 14
-                                            }
-                                        } > FAQs
-          </Link>
-                                </h2>
+                                <p to="/faqs" onClick={this.handleClick}
+                                    style={
+                                        {
+                                            color: `black`,
+                                            float: `bottom`,
+                                            fontSize: 14
+                                        }
+                                    }>FAQs</p>
                             </Col>
 
-                { /* The Link to the sponsors section */}
-                <Col style={
-                    {
-                        alignSelf: `flex-end`,
-                        textAlign: 'center'
-                    }
-                } >
-                    <h2 >
-                        <Link to="/"
-                            style={
+                            { /* The Link to the sponsors section */}
+                            <Col style={
                                 {
                                     alignSelf: `flex-end`,
                                     textAlign: 'center'
                                 }
                             } >
-                                <h2 >
-                                    <Link to="/apply"
-                                        style={
-                                            {
-                                                color: `black`,
-                                                float: `bottom`,
-                                                fontSize: 14
-                                            }
-                                        } > Sponsors
-          </Link>
-                                </h2>
+                                <p to="/sponsors" onClick={this.handleClick}
+                                    style={
+                                        {
+                                            color: `black`,
+                                            float: `bottom`,
+                                            fontSize: 14
+                                        }
+                                    }>Sponsors</p>
                             </Col>
                         </Row>
                     </Col>
