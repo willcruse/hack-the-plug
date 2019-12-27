@@ -32,8 +32,6 @@ const BackgroundSection = ({ className }) => (
           backgroundColor={`#040e18`}
         >
 
-          
-
           <Image style ={{
             top: '10px',
             left: '7%',
@@ -41,6 +39,18 @@ const BackgroundSection = ({ className }) => (
             minWidth: '280px',
             maxHeight: 'auto'
           }}></Image>
+
+          <p style={{
+            textAlign: "center",
+            minWidth: "75%",
+            maxWidth: "75%",
+            marginLeft: "15%",
+            backgroundColor: "rgba(255, 249, 240, 0.7)",
+            padding: 20,
+            borderRadius: 5,
+            fontSize: "calc(10px + 1.5vw)"
+          }}>A 24 hour Hackathon at <a style={{fontWeight: "bold"}}>the University of Bath</a><br />
+          <a style={{fontWeight: 300, fontSize: "70%", color: "rgb(28, 28, 28)"}}>28th-29th of March 2020</a></p>
 
           {/*<Button variant="primary" type="submit" size="lg" style={{
             display: 'block',
@@ -60,6 +70,7 @@ const BackgroundSection = ({ className }) => (
 // export default BackgroundSection;
 const StyledBackgroundSection = styled(BackgroundSection)`
   width: 100%;
+  overflow: hidden;
   height: 100vh;
   margin-top: 0px;
   z-index: -1;
