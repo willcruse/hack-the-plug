@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import Image from './image'
+import About from '../components/about'
 import BackgroundImage from 'gatsby-background-image'
 import { Form, Button } from "react-bootstrap";
 
@@ -30,6 +31,9 @@ const BackgroundSection = ({ className }) => (
           fluid={imageData}
           backgroundColor={`#040e18`}
         >
+
+          
+
           <Image style ={{
             top: '10px',
             left: '7%',
@@ -57,7 +61,7 @@ const BackgroundSection = ({ className }) => (
 const StyledBackgroundSection = styled(BackgroundSection)`
   width: 100%;
   height: 100vh;
-  margin-top: -50px;
+  margin-top: 0px;
   z-index: -1;
   background-position: bottom;
   background-repeat: repeat-y;
