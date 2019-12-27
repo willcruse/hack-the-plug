@@ -42,8 +42,8 @@ const BackgroundSection = ({ className }) => (
 
           <p style={{
             textAlign: "center",
-            minWidth: "75%",
-            maxWidth: "75%",
+            minWidth: "70%",
+            maxWidth: "70%",
             marginLeft: "15%",
             backgroundColor: "rgba(255, 249, 240, 0.7)",
             padding: 20,
