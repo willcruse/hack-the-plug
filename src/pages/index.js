@@ -13,7 +13,13 @@ const IndexPage = () => (
     <About />
     <Team />
     <FAQs />
-    <div id="Sponsor">
+    <div id="Sponsor" style={{
+      marginTop: 50,
+      marginBottom: 50,
+      backgroundColor: "rgb(240, 250, 255)",
+      minWidth: "100%",
+      padding: 50
+    }}>
       <h1>Interested in sponsoring Hack The Plug?</h1>
       <p>Please email <b>hacktheplug@gmail.com</b> to discuss sponsorship</p>
     </div>
