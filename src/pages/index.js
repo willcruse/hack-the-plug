@@ -6,10 +6,53 @@ import '../components/about'
 import Team from "../components/Team"
 import FAQs from "../components/FAQs"
 import About from "../components/about"
+import { Form, Button } from "react-bootstrap";
 
 const IndexPage = () => (
   <Layout main={true}>
     <SEO title="Home" />
+
+    <div style={{
+      marginTop: 50,
+      marginBottom: 50,
+      backgroundColor: "rgb(240, 250, 255)",
+      textAlign: 'center',
+      padding: '50px'
+    }}>
+      <h1 style={{
+        textAlign: 'left'
+      }}>Pre-register</h1>
+      <p style={{
+        textAlign: 'left'
+      }}>We will send you an email to let you know when registration opens and any other relevent updates.</p>
+      <input type="text" placeholder="Email address" style={{
+        display: 'inline-block;',
+        minWidth: '20%',
+        minHeight: '50px',
+        borderLeft: '0px solid black',
+        borderTop: '0px solid black',
+        borderRight: '0px solid black',
+        borderBottom: '1px solid black',
+        backgroundColor: "rgb(240, 250, 255)",
+        textAlign: 'center',
+        fontSize: '16px',
+        marginRight: 'auto',
+        marginLeft: 'auto',
+        marginTop: '20px',
+        marginBottom: '20px'
+      }}/>
+      <Button variant="primary" size="lg" style={{
+        display: 'inline-block;',
+        minWidth: '20%',
+        minHeight: '50px',
+        marginTop: '-7px',
+        marginLeft: '20px',
+        marginRight: '20px',
+      }}>
+          Pre-Register
+      </Button>
+    </div>
+
     <About />
     <Team />
     <FAQs />
