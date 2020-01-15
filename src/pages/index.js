@@ -1,5 +1,5 @@
 import React from "react"
-
+import {useState} from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import '../components/about'
@@ -8,7 +8,32 @@ import FAQs from "../components/FAQs"
 import About from "../components/about"
 import { Form, Button } from "react-bootstrap";
 
-const IndexPage = () => (
+const IndexPage = () => {
+  const [input, setInput] = useState('');
+  const [reg, setReg] = useState(false);
+
+const preRegHandler = (event) => {
+  event.preventDefault();
+  fetch("https://europe-west1-hack-the-plug.cloudfunctions.net/preregister", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({email: input})
+  }
+  ).then((response) => {
+    return response.text();
+  }).then((text) => {
+    if (text === 'success') {
+        setReg(true);
+    } else {
+      setInput("Error in Registration");
+    }
+  });
+};
+
+
+return (
   <Layout main={true}>
     <SEO title="Home" />
 
@@ -18,14 +43,16 @@ const IndexPage = () => (
       backgroundColor: "rgb(240, 250, 255)",
       textAlign: 'center',
       padding: '50px'
-    }}>
+    }}>{reg ? <h1>Registered!</h1> : (<div>
       <h1 style={{
         textAlign: 'left'
       }}>Pre-register</h1>
       <p style={{
         textAlign: 'left'
       }}>We will send you an email to let you know when registration opens and any other relevent updates.</p>
-      <input type="text" placeholder="Email address" style={{
+      <input type="text" placeholder="Email address" onInput={e => setInput(e.target.value)} 
+      value={input}
+      style={{
         display: 'inline-block;',
         minWidth: '20%',
         minHeight: '50px',
@@ -48,9 +75,9 @@ const IndexPage = () => (
         marginTop: '-7px',
         marginLeft: '20px',
         marginRight: '20px',
-      }}>
+      }} onClick={preRegHandler}>
           Pre-Register
-      </Button>
+    </Button></div>)}
     </div>
 
     <About />
@@ -68,5 +95,5 @@ const IndexPage = () => (
     </div>
   </Layout>
 )
-
+  }
 export default IndexPage
