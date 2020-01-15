@@ -43,14 +43,14 @@ return (
       backgroundColor: "rgb(240, 250, 255)",
       textAlign: 'center',
       padding: '50px'
-    }}>{reg ? <h1>Registered!</h1> : (<div>
+    }}>{reg ? <h1>Pre-registered!</h1> : (<div>
       <h1 style={{
         textAlign: 'left'
       }}>Pre-register</h1>
       <p style={{
         textAlign: 'left'
       }}>We will send you an email to let you know when registration opens and any other relevent updates.</p>
-      <input type="text" placeholder="Email address" onInput={e => setInput(e.target.value)} 
+      <input type="text" placeholder="Email address" onInput={e => setInput(e.target.value)}
       value={input}
       style={{
         display: 'inline-block;',

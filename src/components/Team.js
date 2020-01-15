@@ -9,7 +9,14 @@ class Team extends React.Component {
 
     render() {
         return (
-            <div id="team" ref={this.teamRef}>
+            <div id="team" ref={this.teamRef}style={{
+              marginTop: 50,
+              marginBottom: 50,
+              backgroundColor: "rgba(255, 240, 240, 0.65)",
+              minWidth: "100%",
+              padding: 20
+            }}>
+              <h1 style={{marginLeft: 30, marginRight: 30, marginBottom: 50}}>Hack The Plug team</h1>
                 <Container fluid>
                     <Row>
                         <Col><Profile pers="will"/></Col>
@@ -20,8 +27,8 @@ class Team extends React.Component {
                         <Col><Profile pers="awen" /></Col>
                         <Col><Profile pers="ed" /></Col>
                         <Col><></></Col>
-                    </Row >
-                </Container >
+                    </Row>
+                </Container>
             </div >
         );
     }

@@ -65,22 +65,22 @@ const ProfileImages = (props) => {
 
     switch (props.pers) {
       case "will":
-        return (<Img fluid={data.willImage.childImageSharp.fluid} />);
+        return (<Img fluid={data.willImage.childImageSharp.fluid} style={{borderRadius: '10px'}}/>);
         break;
       case "james":
-        return (<Img fluid={data.jamesImage.childImageSharp.fluid} />);
+        return (<Img fluid={data.jamesImage.childImageSharp.fluid} style={{borderRadius: '10px'}}/>);
         break;
       case "ollie":
-        return (<Img fluid={data.oliverImage.childImageSharp.fluid} />);
+        return (<Img fluid={data.oliverImage.childImageSharp.fluid} style={{borderRadius: '10px'}}/>);
         break;
       case "awen":
-        return (<Img fluid={data.awenImage.childImageSharp.fluid} />);
+        return (<Img fluid={data.awenImage.childImageSharp.fluid} style={{borderRadius: '10px'}}/>);
         break;
       case "ed":
-        return (<Img fluid={data.edImage.childImageSharp.fluid} />);
+        return (<Img fluid={data.edImage.childImageSharp.fluid} style={{borderRadius: '10px'}}/>);
         break;
       case "arthur":
-        return (<Img fluid={data.arthurImage.childImageSharp.fluid} />);
+        return (<Img fluid={data.arthurImage.childImageSharp.fluid} style={{borderRadius: '10px'}}/>);
         break;
       default:
         return (<h1>Error</h1>);
