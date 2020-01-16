@@ -52,16 +52,6 @@ const BackgroundSection = ({ className }) => (
           }}>A 24 hour Hackathon at <a style={{fontWeight: "bold"}}>the University of Bath</a><br />
           <a style={{fontWeight: 300, fontSize: "70%", color: "rgb(28, 28, 28)"}}>28th-29th of March 2020</a></p>
 
-          {/*<Button variant="primary" type="submit" size="lg" style={{
-            display: 'block',
-            marginRight: 'auto',
-            marginLeft: 'auto',
-            minWidth: '20%',
-            minHeight: '50px'
-          }}>
-              Pre-Register
-          </Button>*/}
-
         </BackgroundImage>
       )
     }}

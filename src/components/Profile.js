@@ -39,15 +39,21 @@ class Profile extends React.Component {
             <div id={this.props.pers}>
                 <Jumbotron style={{
                     height: "auto",
-                    width: "100%",
-                    padding: "5%"
+                    width: "80%",
+                    minWidth: '50px',
+                    padding: "0%",
+                    backgroundColor: 'rgb(255, 255, 255, 0)'
                 }}>
                     <ProfileImages pers={this.props.pers}/>
                     <h3 style={{
-                      fontSize: "calc(8px + 1.5vw)"
+                      fontSize: "calc(6px + 1vw)",
+                      marginBottom: '0px',
+                      textAlign: 'center'
                     }}>{details[this.props.pers].name}</h3>
                     <h4 style={{
-                      fontSize: "calc(6px + 1vw)"
+                      fontSize: "calc(4px + 1vw)",
+                      fontWeight: 300,
+                      textAlign: 'center'
                     }}>{details[this.props.pers].role}</h4>
                 </Jumbotron>
             </div>
