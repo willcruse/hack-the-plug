@@ -22,7 +22,7 @@ const details = {
     },
     "ed": {
         "name": "Edward Gokman",
-        "role": "Team Member",
+        "role": "Head of logistics",
     },
     "arthur": {
         "name": "Arthur Baker",
