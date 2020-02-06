@@ -1,98 +1,102 @@
 import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
-import {
-    Link
-} from "gatsby"
+import { ThemeConsumer } from "styled-components";
 
-const Links = () => {
-    return (
-        <Container fluid >
-            <Row >
-                <Col xs="auto" sm="auto">
-                <Row>
-                { /* The Link to the About section */}
-                <Col style={
-                    {
-                        alignSelf: `flex-end`,
-                        textAlign: 'center'
-                    }
-                } >
-                    <h2 >
-                        <Link to="/"
-                            style={
-                                {
-                                    color: `black`,
-                                    fontSize: 14
-                                }
-                            } > About
-          </Link>
-                    </h2>
-                </Col>
 
-                { /* The Link to the committee section */}
-                <Col style={
-                    {
-                        alignSelf: `flex-end`,
-                        textAlign: 'center'
-                    }
-                } >
-                    <h2>
-                        <Link to="/"
-                            style={
-                                {
-                                    color: `black`,
-                                    float: `bottom`,
-                                    fontSize: 14
-                                }
-                            } > Team
-          </Link>
-                    </h2>
-                </Col>
+class Links extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
 
-                { /* The Link to the application section */}
-                <Col style={
-                    {
-                        alignSelf: `flex-end`,
-                        textAlign: 'center'
-                    }
-                } >
-                    <h2 >
-                        <Link to="/"
-                            style={
-                                {
-                                    color: `black`,
-                                    float: `bottom`,
-                                    fontSize: 14
-                                }
-                            } > FAQs
-          </Link>
-                    </h2>
-                </Col>
+    }
 
-                { /* The Link to the sponsors section */}
-                <Col style={
-                    {
-                        alignSelf: `flex-end`,
-                        textAlign: 'center'
-                    }
-                } >
-                    <h2 >
-                        <Link to="/"
-                            style={
+    handleClick(event) {
+        event.preventDefault();
+        window.scrollTo(0, );
+    }
+
+    render() {
+        return (
+            <Container fluid >
+                <Row >
+                    <Col xs="auto" sm="auto">
+                        <Row>
+                            { /* The Link to the About section */}
+                            <Col style={
                                 {
-                                    color: `black`,
-                                    float: `bottom`,
-                                    fontSize: 14
+                                    alignSelf: `flex-end`,
+                                    textAlign: 'center'
                                 }
-                            } > Sponsors
-          </Link>
-                    </h2>
-                </Col>
+                            } >
+                                <p to="/about" onClick={(event) => {
+                                    console.log(this.refs);
+                                    this.refs.about.current.scrollIntoView();
+                                }}
+                                    style={
+                                        {
+                                            color: `black`,
+                                            float: `bottom`,
+                                            fontSize: 14
+                                        }
+                                    }>About</p>
+                            </Col>
+
+                            { /* The Link to the committee section */}
+                            <Col style={
+                                {
+                                    alignSelf: `flex-end`,
+                                    textAlign: 'center'
+                                }
+                            } >
+                                <p to="/committee" onClick={this.handleClick}
+                                    style={
+                                        {
+                                            color: `black`,
+                                            float: `bottom`,
+                                            fontSize: 14
+                                        }
+                                    }>Team</p>
+                            </Col>
+
+                            { /* The Link to the application section */}
+                            <Col style={
+                                {
+                                    alignSelf: `flex-end`,
+                                    textAlign: 'center'
+                                }
+                            } >
+                                <p to="/faqs" onClick={this.handleClick}
+                                    style={
+                                        {
+                                            color: `black`,
+                                            float: `bottom`,
+                                            fontSize: 14
+                                        }
+                                    }>FAQs</p>
+                            </Col>
+
+                            { /* The Link to the sponsors section */}
+                            <Col style={
+                                {
+                                    alignSelf: `flex-end`,
+                                    textAlign: 'center'
+                                }
+                            } >
+                                <p to="/sponsors" onClick={this.handleClick}
+                                    style={
+                                        {
+                                            color: `black`,
+                                            float: `bottom`,
+                                            fontSize: 14
+                                        }
+                                    }>Sponsors</p>
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col sm="auto" xs={0}></Col>
                 </Row>
-                </Col>
-                <Col sm="auto" xs={0}></Col>
-            </Row>
-        </Container>)
+            </Container>)
+    }
 }
 
 export default Links;

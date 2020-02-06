@@ -21,7 +21,7 @@ const Header = (props) => {
                 }
             } >
 
-            {props.main ? <Links/> : <div></div>}
+            {/* {props.main ? <Links/> : <div></div>} */}
   
 
             </header> 
