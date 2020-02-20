@@ -2,29 +2,40 @@ import React from "react"
 import { Table } from "react-bootstrap"
 import tableitem from "./tableitem"
 const Timetable = () => (
-  <Table>
-    <thead>
-      <tr>
-        <th>Time</th>
-        <th>Event</th>
-        <th>Location</th>
-      </tr>
-    </thead>
-    <tbody>
-    {
-      tableItems.map((item) => {
-        console.log(item)
-        return (
-          <tr>
-            <td>{item.time}</td>
-            <td>{item.event}</td>
-            <td>{item.location}</td>
-          </tr>
-        )
-      })
-    }
-    </tbody>
-  </Table>
+  <div style={{
+    marginTop: 50,
+    marginBottom: 50,
+    backgroundColor: "rgb(249, 255, 240)",
+    minWidth: "100%",
+    padding: 50
+  }}>
+    <h1 style={{
+      marginBottom: 20
+    }}>Timetable</h1>
+    <Table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Event</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+      {
+        tableItems.map((item) => {
+          console.log(item)
+          return (
+            <tr>
+              <td>{item.time}</td>
+              <td>{item.event}</td>
+              <td>{item.location}</td>
+            </tr>
+          )
+        })
+      }
+      </tbody>
+    </Table>
+  </div>
 )
 export default Timetable
 
