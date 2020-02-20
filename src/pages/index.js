@@ -7,6 +7,7 @@ import Team from "../components/Team"
 import FAQs from "../components/FAQs"
 import About from "../components/about"
 import { Form, Button } from "react-bootstrap";
+import Timetable from "../components/timetable"
 
 const IndexPage = () => {
   const [input, setInput] = useState('');
@@ -81,6 +82,7 @@ return (
     </div>
 
     <About />
+    <Timetable/>
     <Team />
     <FAQs />
     <div id="Sponsor" style={{
