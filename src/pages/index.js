@@ -2,7 +2,8 @@ import React from "react"
 import {useState} from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import '../components/about'
+//import '../components/about'
+import Sponsors from "../components/Sponsors"
 import Team from "../components/Team"
 import FAQs from "../components/FAQs"
 import About from "../components/about"
@@ -82,6 +83,7 @@ return (
     {/*</div>*/}
 
     <About />
+    <Sponsors />
     <Timetable/>
     <Team />
     <FAQs />
