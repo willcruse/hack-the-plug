@@ -49,7 +49,7 @@ return (
       <Button variant="primary" size="lg" href="https://www.eventbrite.com/e/hacktheplug-tickets-97295799355?aff=web" style={{
         marginTop: 20
       }}>
-      Register
+      Apply now
       </Button>
     </div>
     {/*<div style={{*/}
