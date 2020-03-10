@@ -38,7 +38,20 @@ const IndexPage = () => {
 return (
   <Layout main={true}>
     <SEO title="Home" />
-
+    <div style={{
+      marginTop: 50,
+      marginBottom: 50,
+      backgroundColor: "rgb(240, 250, 255)",
+      textAlign: 'center',
+      padding: '50px'
+    }}>
+      <h1>Registrations are now open!</h1>
+      <Button variant="primary" size="lg" href="https://www.eventbrite.com/e/hacktheplug-tickets-97295799355?aff=web" style={{
+        marginTop: 20
+      }}>
+      Register
+      </Button>
+    </div>
     {/*<div style={{*/}
     {/*  marginTop: 50,*/}
     {/*  marginBottom: 50,*/}
