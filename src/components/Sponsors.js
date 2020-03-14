@@ -41,13 +41,6 @@ class Sponsors extends React.Component {
                   minWidth: 100,
                   marginBottom: 50
                 }}/>
-                <img src={NetCompany} style={{
-                  display: "block",
-                  maxWidth: "30%",
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                  minWidth: 100,
-                }}/>
               </div>
             </div>
         );
