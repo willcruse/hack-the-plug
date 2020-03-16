@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Image from './image'
 import About from '../components/about'
 import BackgroundImage from 'gatsby-background-image'
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 
 const BackgroundSection = ({ className }) => (
 
@@ -39,8 +39,7 @@ const BackgroundSection = ({ className }) => (
             minWidth: '280px',
             maxHeight: 'auto'
           }}></Image>
-
-          <p style={{
+          <Alert variant="danger" style={{
             textAlign: "center",
             minWidth: "70%",
             maxWidth: "70%",
@@ -49,8 +48,9 @@ const BackgroundSection = ({ className }) => (
             padding: 20,
             borderRadius: 5,
             fontSize: "calc(10px + 1.5vw)"
-          }}>A 24 hour Hackathon at <a style={{fontWeight: "bold"}}>the University of Bath</a><br />
-          <a style={{fontWeight: 300, fontSize: "70%", color: "rgb(28, 28, 28)"}}>28th-29th of March 2020</a></p>
+          }}>
+          Due to COVID-19 we have had to cancel HackThePlug 2020
+          </Alert>
 
         </BackgroundImage>
       )
