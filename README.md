@@ -2,7 +2,7 @@
 
 ## FAQs
 When? 4/4/20 - 5/4/20
-Where? TBA
+Where? Uni of Bath
 How much? Free!
 
 ## Deployment
